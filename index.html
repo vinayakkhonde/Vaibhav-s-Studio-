@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaibhav's Studio | Premium Barbershop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#07152a;
+      --navy2:#0d213b;
+      --gold:#c6a15b;
+      --cream:#f4eee2;
+      --muted:#b9b4aa;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      background:var(--navy);
+      color:var(--cream);
+      font-family:Inter,sans-serif;
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:100;
+      padding:18px 6%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(7,21,42,.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(198,161,91,.2);
+    }
+
+    .logo{
+      font-family:"Cormorant Garamond",serif;
+      font-size:27px;
+      font-weight:700;
+      color:var(--gold);
+    }
+
+    nav{
+      display:flex;
+      gap:25px;
+      font-size:13px;
+    }
+
+    nav a:hover{color:var(--gold)}
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 20px 70px;
+      background:
+        radial-gradient(circle at center,rgba(198,161,91,.15),transparent 45%),
+        linear-gradient(180deg,var(--navy),#050d19);
+    }
+
+    .hero-box{max-width:850px}
+
+    .eyebrow{
+      color:var(--gold);
+      letter-spacing:4px;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(55px,12vw,105px);
+      line-height:.85;
+      margin-bottom:25px;
+    }
+
+    .hero p{
+      max-width:600px;
+      margin:auto;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:15px 28px;
+      border:1px solid var(--gold);
+      color:var(--gold);
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:var(--gold);
+      color:var(--navy);
+    }
+
+    section{
+      padding:90px 7%;
+    }
+
+    .section-title{
+      font-family:"Cormorant Garamond",serif;
+      font-size:52px;
+      color:var(--gold);
+      margin-bottom:35px;
+    }
+
+    .about{
+      max-width:800px;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:16px;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      padding:35px 25px;
+      border:1px solid rgba(198,161,91,.25);
+      background:linear-gradient(145deg,#0c213a,#08172a);
+      transition:.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:var(--gold);
+    }
+
+    .card h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      margin-bottom:12px;
+    }
+
+    .price{
+      color:var(--gold);
+      font-size:14px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
+
+    .gallery-item{
+      height:280px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(198,161,91,.2);
+      background:
+        linear-gradient(135deg,#132d4a,#07152a);
+      color:#817967;
+      font-size:13px;
+      text-align:center;
+    }
+
+    .instagram{
+      text-align:center;
+      padding:80px 20px;
+      background:#050e1b;
+    }
+
+    .instagram h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:48px;
+      color:var(--gold);
+    }
+
+    .instagram p{
+      color:var(--muted);
+      margin-top:10px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .contact-box{
+      padding:28px;
+      border-left:2px solid var(--gold);
+      background:#0b1c31;
+    }
+
+    .contact-box small{
+      display:block;
+      color:var(--gold);
+      margin-bottom:8px;
+    }
+
+    .contact-box p{
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#777;
+      border-top:1px solid rgba(198,161,91,.15);
+      font-size:13px;
+    }
+
+    .lang{
+      position:fixed;
+      bottom:18px;
+      right:15px;
+      z-index:200;
+      display:flex;
+      background:#08172a;
+      border:1px solid rgba(198,161,91,.4);
+    }
+
+    .lang button{
+      background:none;
+      border:0;
+      color:var(--cream);
+      padding:9px 11px;
+      font-size:11px;
+    }
+
+    .lang button.active{
+      background:var(--gold);
+      color:var(--navy);
+    }
+
+    @media(max-width:700px){
+      header{padding:15px 5%}
+
+      nav{display:none}
+
+      .services,
+      .gallery,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      section{padding:70px 6%}
+
+      .section-title{font-size:43px}
+
+      .gallery-item{height:230px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">VAIBHAV'S STUDIO</div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-box">
+      <div class="eyebrow">Established 2017</div>
+
+      <h1>Premium Cuts.<br>Your Style.</h1>
+
+      <p>
+        Professional haircuts and modern styles,
+        created according to your reference photo or video.
+      </p>
+
+      <a class="btn" href="tel:+917247447875">
+        Call for Enquiry
+      </a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">About the Studio</div>
+
+    <p class="about">
+      Vaibhav's Studio has been serving customers since 2017.
+      We focus on clean finishing, modern styles and personalised
+      haircuts based on your preferred look.
+    </p>
+  </section>
+
+  <section id="services">
+    <div class="section-title">Our Services</div>
+
+    <div class="services">
+
+      <div class="card">
+        <h3>Low Fade</h3>
+        <div class="price">Starting from ₹80</div>
+      </div>
+
+      <div class="card">
+        <h3>Mid Fade</h3>
+        <div class="price">Starting from ₹80</div>
+      </div>
+
+      <div class="card">
+        <h3>High Fade</h3>
+        <div class="price">Starting from ₹80</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-title">Style Gallery</div>
+
+    <div class="gallery">
+      <div class="gallery-item">YOUR STYLE PHOTO</div>
+      <div class="gallery-item">YOUR STYLE PHOTO</div>
+      <div class="gallery-item">YOUR STYLE PHOTO</div>
+      <div class="gallery-item">YOUR STYLE PHOTO</div>
+      <div class="gallery-item">YOUR STYLE PHOTO</div>
+      <div class="gallery-item">YOUR STYLE PHOTO</div>
+    </div>
+  </section>
+
+  <section class="instagram">
+    <h2>@vinayak_k.42</h2>
+    <p>Follow our latest styles and studio updates.</p>
+
+    <a class="btn" href="https://instagram.com/vinayak_k.42" target="_blank">
+      Visit Instagram
+    </a>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">Visit Us</div>
+
+    <div class="contact-grid">
+
+      <div class="contact-box">
+        <small>PHONE</small>
+        <p>7247448775</p>
+      </div>
+
+      <div class="contact-box">
+        <small>OPENING HOURS</small>
+        <p>8 AM – 8 PM<br>All Days</p>
+      </div>
+
+      <div class="contact-box">
+        <small>LOCATION</small>
+        <p>MUKATI MORE<br>Mehatgaon, Madhya Pradesh</p>
+      </div>
+
+    </div>
+
+    <a class="btn"
+       href="https://maps.app.goo.gl/7jQ3EjG5kwwFQaKw6?g_st=aw"
+       target="_blank">
+      Get Directions
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Vaibhav's Studio · Established 2017
+</footer>
+
+<div class="lang">
+  <button class="active">EN</button>
+  <button>HI</button>
+  <button>HINGLISH</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script>
+  gsap.from(".hero-box > *",{
+    y:40,
+    opacity:0,
+    duration:1,
+    stagger:.15,
+    ease:"power3.out"
+  });
+
+  gsap.utils.toArray(".card,.gallery-item,.contact-box").forEach(el=>{
+    gsap.from(el,{
+      scrollTrigger:{
+        trigger:el,
+        start:"top 85%"
+      },
+      y:30,
+      opacity:0,
+      duration:.8
+    });
+  });
+</script>
+
+</body>
+</html>
