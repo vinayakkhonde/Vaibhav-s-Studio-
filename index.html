@@ -3,420 +3,373 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaibhav's Studio | Premium Barbershop</title>
-
+  <title>Vaibhav's Studio | Premium Barber & Grooming Lounge</title>
+  
+  <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --navy:#07152a;
-      --navy2:#0d213b;
-      --gold:#c6a15b;
-      --cream:#f4eee2;
-      --muted:#b9b4aa;
+    :root {
+      --bg-dark: #0a0c10;
+      --bg-card: #12161f;
+      --gold: #d4af37;
+      --gold-hover: #b8972b;
+      --text-light: #f5f6f8;
+      --text-muted: #8c93a3;
+      --border: rgba(212, 175, 55, 0.2);
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-
-    html{scroll-behavior:smooth}
-
-    body{
-      background:var(--navy);
-      color:var(--cream);
-      font-family:Inter,sans-serif;
-      overflow-x:hidden;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
-    a{text-decoration:none;color:inherit}
-
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      z-index:100;
-      padding:18px 6%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:rgba(7,21,42,.88);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(198,161,91,.2);
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    .logo{
-      font-family:"Cormorant Garamond",serif;
-      font-size:27px;
-      font-weight:700;
-      color:var(--gold);
+    /* Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 8%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 12, 16, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    nav{
-      display:flex;
-      gap:25px;
-      font-size:13px;
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--gold);
     }
 
-    nav a:hover{color:var(--gold)}
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:120px 20px 70px;
-      background:
-        radial-gradient(circle at center,rgba(198,161,91,.15),transparent 45%),
-        linear-gradient(180deg,var(--navy),#050d19);
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
     }
 
-    .hero-box{max-width:850px}
-
-    .eyebrow{
-      color:var(--gold);
-      letter-spacing:4px;
-      text-transform:uppercase;
-      font-size:12px;
-      margin-bottom:18px;
+    .nav-links a:hover {
+      color: var(--gold);
     }
 
-    h1{
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(55px,12vw,105px);
-      line-height:.85;
-      margin-bottom:25px;
+    .cta-btn {
+      background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+      color: #000;
+      padding: 0.7rem 1.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
     }
 
-    .hero p{
-      max-width:600px;
-      margin:auto;
-      color:var(--muted);
-      line-height:1.7;
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
     }
 
-    .btn{
-      display:inline-block;
-      margin-top:30px;
-      padding:15px 28px;
-      border:1px solid var(--gold);
-      color:var(--gold);
-      transition:.3s;
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1.5rem;
+      background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%),
+                  linear-gradient(180deg, rgba(10,12,16,0.3) 0%, var(--bg-dark) 100%);
+      position: relative;
     }
 
-    .btn:hover{
-      background:var(--gold);
-      color:var(--navy);
+    .hero-content {
+      max-width: 800px;
+      margin-top: 4rem;
     }
 
-    section{
-      padding:90px 7%;
+    .hero-tagline {
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
     }
 
-    .section-title{
-      font-family:"Cormorant Garamond",serif;
-      font-size:52px;
-      color:var(--gold);
-      margin-bottom:35px;
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
     }
 
-    .about{
-      max-width:800px;
-      color:var(--muted);
-      line-height:1.9;
-      font-size:16px;
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.2rem;
+      font-weight: 300;
     }
 
-    .services{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
+    /* Services Section */
+    .services {
+      padding: 6rem 8%;
     }
 
-    .card{
-      padding:35px 25px;
-      border:1px solid rgba(198,161,91,.25);
-      background:linear-gradient(145deg,#0c213a,#08172a);
-      transition:.4s;
+    .section-title {
+      text-align: center;
+      margin-bottom: 3.5rem;
     }
 
-    .card:hover{
-      transform:translateY(-8px);
-      border-color:var(--gold);
+    .section-title h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--text-light);
     }
 
-    .card h3{
-      font-family:"Cormorant Garamond",serif;
-      font-size:30px;
-      margin-bottom:12px;
+    .section-title p {
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
     }
 
-    .price{
-      color:var(--gold);
-      font-size:14px;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:15px;
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2.2rem;
+      transition: transform 0.3s, border-color 0.3s;
     }
 
-    .gallery-item{
-      height:280px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid rgba(198,161,91,.2);
-      background:
-        linear-gradient(135deg,#132d4a,#07152a);
-      color:#817967;
-      font-size:13px;
-      text-align:center;
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
     }
 
-    .instagram{
-      text-align:center;
-      padding:80px 20px;
-      background:#050e1b;
+    .service-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
     }
 
-    .instagram h2{
-      font-family:"Cormorant Garamond",serif;
-      font-size:48px;
-      color:var(--gold);
+    .service-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
     }
 
-    .instagram p{
-      color:var(--muted);
-      margin-top:10px;
+    .price {
+      color: var(--gold);
+      font-size: 1.25rem;
+      font-weight: 600;
     }
 
-    .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 300;
     }
 
-    .contact-box{
-      padding:28px;
-      border-left:2px solid var(--gold);
-      background:#0b1c31;
+    /* Experience Highlight */
+    .experience {
+      padding: 5rem 8%;
+      background: var(--bg-card);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
     }
 
-    .contact-box small{
-      display:block;
-      color:var(--gold);
-      margin-bottom:8px;
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
-    .contact-box p{
-      color:var(--muted);
-      line-height:1.6;
+    .experience-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
     }
 
-    footer{
-      text-align:center;
-      padding:30px;
-      color:#777;
-      border-top:1px solid rgba(198,161,91,.15);
-      font-size:13px;
+    .experience-item p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
     }
 
-    .lang{
-      position:fixed;
-      bottom:18px;
-      right:15px;
-      z-index:200;
-      display:flex;
-      background:#08172a;
-      border:1px solid rgba(198,161,91,.4);
+    /* Contact & Footer */
+    footer {
+      padding: 5rem 8% 2rem;
+      background: #07080a;
+      text-align: center;
     }
 
-    .lang button{
-      background:none;
-      border:0;
-      color:var(--cream);
-      padding:9px 11px;
-      font-size:11px;
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .lang button.active{
-      background:var(--gold);
-      color:var(--navy);
+    .footer-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
     }
 
-    @media(max-width:700px){
-      header{padding:15px 5%}
+    .footer-details p {
+      color: var(--text-muted);
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
 
-      nav{display:none}
+    .copy {
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      color: #4a5060;
+    }
 
-      .services,
-      .gallery,
-      .contact-grid{
-        grid-template-columns:1fr;
-      }
-
-      section{padding:70px 6%}
-
-      .section-title{font-size:43px}
-
-      .gallery-item{height:230px}
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      .nav-links { display: none; }
+      header { justify-content: space-between; }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">VAIBHAV'S STUDIO</div>
+  <!-- Header -->
+  <header>
+    <div class="logo">VAIBHAV'S STUDIO</div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#experience">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:+910000000000" class="cta-btn">BOOK NOW</a>
+  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-box">
-      <div class="eyebrow">Established 2017</div>
-
-      <h1>Premium Cuts.<br>Your Style.</h1>
-
-      <p>
-        Professional haircuts and modern styles,
-        created according to your reference photo or video.
-      </p>
-
-      <a class="btn" href="tel:+917247447875">
-        Call for Enquiry
-      </a>
+    <div class="hero-content">
+      <div class="hero-tagline">Artistry & Precision Grooming</div>
+      <h1>Elevate Your Signature Look.</h1>
+      <p>A refined grooming experience designed for modern gentlemen. Premium cuts, precision beard styling, and restorative skin treatments.</p>
+      <a href="#services" class="cta-btn">EXPLORE SERVICES</a>
     </div>
   </section>
 
-  <section id="about">
-    <div class="section-title">About the Studio</div>
+  <!-- Services & Pricing -->
+  <section class="services" id="services">
+    <div class="section-title">
+      <h2>Handcrafted Services</h2>
+      <p>Premium Grooming Menu</p>
+    </div>
 
-    <p class="about">
-      Vaibhav's Studio has been serving customers since 2017.
-      We focus on clean finishing, modern styles and personalised
-      haircuts based on your preferred look.
-    </p>
-  </section>
-
-  <section id="services">
-    <div class="section-title">Our Services</div>
-
-    <div class="services">
-
-      <div class="card">
-        <h3>Low Fade</h3>
-        <div class="price">Starting from ₹80</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-header">
+          <h3>Signature Haircut</h3>
+          <span class="price">₹250</span>
+        </div>
+        <p class="service-desc">Consultation, tailored scissor/clipper work, hair wash & bespoke styling finish.</p>
       </div>
 
-      <div class="card">
-        <h3>Mid Fade</h3>
-        <div class="price">Starting from ₹80</div>
+      <div class="service-card">
+        <div class="service-header">
+          <h3>Precision Beard Sculpt</h3>
+          <span class="price">₹150</span>
+        </div>
+        <p class="service-desc">Razor shape-up, hot towel prep, organic beard oil treatment & edge definition.</p>
       </div>
 
-      <div class="card">
-        <h3>High Fade</h3>
-        <div class="price">Starting from ₹80</div>
+      <div class="service-card">
+        <div class="service-header">
+          <h3>The Royal Treatment</h3>
+          <span class="price">₹500</span>
+        </div>
+        <p class="service-desc">Full haircut, luxury beard trim, detox head massage and herbal face cleanse.</p>
       </div>
 
+      <div class="service-card">
+        <div class="service-header">
+          <h3>Skin Glow & De-Tan</h3>
+          <span class="price">₹400</span>
+        </div>
+        <p class="service-desc">Deep pore cleansing, steam exfoliation and anti-fatigue hydration mask.</p>
+      </div>
     </div>
   </section>
 
-  <section id="gallery">
-    <div class="section-title">Style Gallery</div>
-
-    <div class="gallery">
-      <div class="gallery-item">YOUR STYLE PHOTO</div>
-      <div class="gallery-item">YOUR STYLE PHOTO</div>
-      <div class="gallery-item">YOUR STYLE PHOTO</div>
-      <div class="gallery-item">YOUR STYLE PHOTO</div>
-      <div class="gallery-item">YOUR STYLE PHOTO</div>
-      <div class="gallery-item">YOUR STYLE PHOTO</div>
+  <!-- Experience & Quality Highlights -->
+  <section class="experience" id="experience">
+    <div class="section-title">
+      <h2>The Studio Standard</h2>
+      <p>Unmatched Atmosphere</p>
+    </div>
+    <div class="experience-grid">
+      <div class="experience-item">
+        <h4>100%</h4>
+        <p>Sterilized & Hygienic Tools</p>
+      </div>
+      <div class="experience-item">
+        <h4>Top-Tier</h4>
+        <p>Premium Professional Products</p>
+      </div>
+      <div class="experience-item">
+        <h4>Custom</h4>
+        <p>Personalized Style Consultation</p>
+      </div>
     </div>
   </section>
 
-  <section class="instagram">
-    <h2>@vinayak_k.42</h2>
-    <p>Follow our latest styles and studio updates.</p>
-
-    <a class="btn" href="https://instagram.com/vinayak_k.42" target="_blank">
-      Visit Instagram
-    </a>
-  </section>
-
-  <section id="contact">
-    <div class="section-title">Visit Us</div>
-
-    <div class="contact-grid">
-
-      <div class="contact-box">
-        <small>PHONE</small>
-        <p>7247448775</p>
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    <div class="footer-content">
+      <h3>Vaibhav's Studio</h3>
+      <div class="footer-details">
+        <p>📍 Shop Location & Address Details Here</p>
+        <p>⏰ Tuesday – Sunday: 9:00 AM – 9:00 PM</p>
+        <p>📞 Phone / WhatsApp: +91 98765 43210</p>
       </div>
-
-      <div class="contact-box">
-        <small>OPENING HOURS</small>
-        <p>8 AM – 8 PM<br>All Days</p>
+      <div style="margin-top: 2rem;">
+        <a href="tel:+919876543210" class="cta-btn">CALL FOR APPOINTMENT</a>
       </div>
-
-      <div class="contact-box">
-        <small>LOCATION</small>
-        <p>MUKATI MORE<br>Mehatgaon, Madhya Pradesh</p>
-      </div>
-
+      <p class="copy">© 2026 Vaibhav's Studio. All rights reserved.</p>
     </div>
-
-    <a class="btn"
-       href="https://maps.app.goo.gl/7jQ3EjG5kwwFQaKw6?g_st=aw"
-       target="_blank">
-      Get Directions
-    </a>
-  </section>
-
-</main>
-
-<footer>
-  © 2026 Vaibhav's Studio · Established 2017
-</footer>
-
-<div class="lang">
-  <button class="active">EN</button>
-  <button>HI</button>
-  <button>HINGLISH</button>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
-<script>
-  gsap.from(".hero-box > *",{
-    y:40,
-    opacity:0,
-    duration:1,
-    stagger:.15,
-    ease:"power3.out"
-  });
-
-  gsap.utils.toArray(".card,.gallery-item,.contact-box").forEach(el=>{
-    gsap.from(el,{
-      scrollTrigger:{
-        trigger:el,
-        start:"top 85%"
-      },
-      y:30,
-      opacity:0,
-      duration:.8
-    });
-  });
-</script>
+  </footer>
 
 </body>
 </html>
